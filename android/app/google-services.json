@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "232614530250",
+    "project_id": "mantra-flow",
+    "storage_bucket": "mantra-flow.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232614530250:android:31023ecc52c2a91d8c7833",
+        "android_client_info": {
+          "package_name": "com.example.mantra_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3u4BJnxlGiPvwA2v8rd8dtLk82Kwm454"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
