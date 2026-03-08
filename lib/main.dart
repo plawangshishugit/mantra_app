@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'firebase_options.dart';
-import 'features/mantra/mantra_screen.dart';
+import 'features/home/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Initialize Hive
+  await Hive.initFlutter();
+
+  // Open mantra storage box
+  await Hive.openBox<String>('mantras');
+  await Hive.openBox('daily_schedule');
 
   runApp(const MantraApp());
 }
@@ -22,26 +31,7 @@ class MantraApp extends StatelessWidget {
       title: 'MantraFlow',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: MantraScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("MantraFlow"),
-      ),
-      body: const Center(
-        child: Text(
-          "Firebase Connected Successfully",
-          style: TextStyle(fontSize: 22),
-        ),
-      ),
+      home:  HomeScreen(),
     );
   }
 }
